@@ -1,12 +1,9 @@
 <template>
   <v-app-bar color="cyan lighten-5" absolute>
-    <RouterLink to="mypage"> 英語塾 </RouterLink>
-    <div v-if="isLogin">
-      <span> {{ username }} </span>
-      <v-btn color="primary" @click="logout">Logout</v-btn>
-    </div>
-    <div v-else>
-      <RouterLink to="/login"> Login / Register </RouterLink>
+    <RouterLink to="/"> 英語塾 </RouterLink>
+    <div v-show="isLogin">
+      <span> {{ username }} さん</span>
+      <v-btn color="primary" @click="logout">ログアウト</v-btn>
     </div>
   </v-app-bar>
 </template>

@@ -1928,9 +1928,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     isLogin: function isLogin() {
@@ -2397,11 +2394,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context2.abrupt("return", false);
 
               case 14:
-                console.log('登録できました');
-
                 _this2.fetch();
 
-              case 16:
+              case 15:
               case "end":
                 return _context2.stop();
             }
@@ -2673,7 +2668,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context2.abrupt("return", false);
 
               case 11:
-                _this3.$router.push('/');
+                _this3.$router.push('/admin');
 
               case 12:
               case "end":
@@ -3167,7 +3162,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 if (_this.apiStatus) {
-                  _this.$router.push('/');
+                  _this.$router.push('/mypage');
                 }
 
               case 3:
@@ -3191,7 +3186,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 if (_this2.apiStatus) {
-                  _this2.$router.push('/');
+                  _this2.$router.push('/mypage');
                 }
 
               case 3:
@@ -3571,6 +3566,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Top.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Top.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters['auth/check'];
+    },
+    username: function username() {
+      return this.$store.getters['auth/username'];
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/WordQuestionList.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/WordQuestionList.vue?vue&type=script&lang=js& ***!
@@ -3769,18 +3800,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/Mypage.vue */ "./resources/js/pages/Mypage.vue");
-/* harmony import */ var _pages_MypageAdmin_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/MypageAdmin.vue */ "./resources/js/pages/MypageAdmin.vue");
-/* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
-/* harmony import */ var _pages_CreateGroup_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/CreateGroup.vue */ "./resources/js/pages/CreateGroup.vue");
-/* harmony import */ var _pages_CreateWordQuestion_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/CreateWordQuestion.vue */ "./resources/js/pages/CreateWordQuestion.vue");
-/* harmony import */ var _pages_EditWordQuestion_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/EditWordQuestion.vue */ "./resources/js/pages/EditWordQuestion.vue");
-/* harmony import */ var _pages_AnswerWordQuestion_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/AnswerWordQuestion.vue */ "./resources/js/pages/AnswerWordQuestion.vue");
-/* harmony import */ var _pages_WordQuestionList_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/WordQuestionList.vue */ "./resources/js/pages/WordQuestionList.vue");
-/* harmony import */ var _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/errors/System.vue */ "./resources/js/pages/errors/System.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _pages_Top_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/Top.vue */ "./resources/js/pages/Top.vue");
+/* harmony import */ var _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Mypage.vue */ "./resources/js/pages/Mypage.vue");
+/* harmony import */ var _pages_MypageAdmin_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/MypageAdmin.vue */ "./resources/js/pages/MypageAdmin.vue");
+/* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
+/* harmony import */ var _pages_CreateGroup_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/CreateGroup.vue */ "./resources/js/pages/CreateGroup.vue");
+/* harmony import */ var _pages_CreateWordQuestion_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/CreateWordQuestion.vue */ "./resources/js/pages/CreateWordQuestion.vue");
+/* harmony import */ var _pages_EditWordQuestion_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/EditWordQuestion.vue */ "./resources/js/pages/EditWordQuestion.vue");
+/* harmony import */ var _pages_AnswerWordQuestion_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/AnswerWordQuestion.vue */ "./resources/js/pages/AnswerWordQuestion.vue");
+/* harmony import */ var _pages_WordQuestionList_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/WordQuestionList.vue */ "./resources/js/pages/WordQuestionList.vue");
+/* harmony import */ var _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/errors/System.vue */ "./resources/js/pages/errors/System.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+
 
 
 
@@ -3795,13 +3828,16 @@ __webpack_require__.r(__webpack_exports__);
  // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
 
-vue__WEBPACK_IMPORTED_MODULE_10__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_11__.default); // パスとコンポーネントのマッピング
+vue__WEBPACK_IMPORTED_MODULE_11__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_12__.default); // パスとコンポーネントのマッピング
 
 var routes = [{
+  path: '/',
+  component: _pages_Top_vue__WEBPACK_IMPORTED_MODULE_0__.default
+}, {
   path: '/mypage',
-  component: _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+  component: _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_1__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/check"]) {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/check"]) {
       next();
     } else {
       next('/login');
@@ -3809,9 +3845,9 @@ var routes = [{
   }
 }, {
   path: '/admin',
-  component: _pages_MypageAdmin_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+  component: _pages_MypageAdmin_vue__WEBPACK_IMPORTED_MODULE_2__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/username"] === 'admin') {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/username"] === 'admin') {
       next();
     } else {
       next('/login');
@@ -3819,11 +3855,11 @@ var routes = [{
   }
 }, {
   path: '/login',
-  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_2__.default,
+  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/username"] === 'admin') {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/username"] === 'admin') {
       next('/admin');
-    } else if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/check"]) {
+    } else if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/check"]) {
       next('/');
     } else {
       next();
@@ -3831,9 +3867,9 @@ var routes = [{
   }
 }, {
   path: '/create-group',
-  component: _pages_CreateGroup_vue__WEBPACK_IMPORTED_MODULE_3__.default,
+  component: _pages_CreateGroup_vue__WEBPACK_IMPORTED_MODULE_4__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/username"] === 'admin') {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/username"] === 'admin') {
       next();
     } else {
       next('/login');
@@ -3841,9 +3877,9 @@ var routes = [{
   }
 }, {
   path: '/create-word-question',
-  component: _pages_CreateWordQuestion_vue__WEBPACK_IMPORTED_MODULE_4__.default,
+  component: _pages_CreateWordQuestion_vue__WEBPACK_IMPORTED_MODULE_5__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/username"] === 'admin') {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/username"] === 'admin') {
       next();
     } else {
       next('/login');
@@ -3851,9 +3887,9 @@ var routes = [{
   }
 }, {
   path: '/edit-word-question/:id',
-  component: _pages_EditWordQuestion_vue__WEBPACK_IMPORTED_MODULE_5__.default,
+  component: _pages_EditWordQuestion_vue__WEBPACK_IMPORTED_MODULE_6__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/username"] === 'admin') {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/username"] === 'admin') {
       next();
     } else {
       next('/login');
@@ -3861,9 +3897,9 @@ var routes = [{
   }
 }, {
   path: '/word-question-list',
-  component: _pages_WordQuestionList_vue__WEBPACK_IMPORTED_MODULE_7__.default,
+  component: _pages_WordQuestionList_vue__WEBPACK_IMPORTED_MODULE_8__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/username"] === 'admin') {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/username"] === 'admin') {
       next();
     } else {
       next('/login');
@@ -3871,9 +3907,9 @@ var routes = [{
   }
 }, {
   path: '/answer-word-question/:id',
-  component: _pages_AnswerWordQuestion_vue__WEBPACK_IMPORTED_MODULE_6__.default,
+  component: _pages_AnswerWordQuestion_vue__WEBPACK_IMPORTED_MODULE_7__.default,
   beforeEnter: function beforeEnter(to, from, next) {
-    if (_store__WEBPACK_IMPORTED_MODULE_9__.default.getters["auth/check"]) {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__.default.getters["auth/check"]) {
       next();
     } else {
       next('/login');
@@ -3881,10 +3917,10 @@ var routes = [{
   }
 }, {
   path: '/500',
-  component: _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_8__.default
+  component: _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_9__.default
 }]; // VueRouterインスタンスを作成する
 
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_11__.default({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_12__.default({
   mode: 'history',
   routes: routes
 }); // VueRouterインスタンスをエクスポートする
@@ -6179,6 +6215,45 @@ component.options.__file = "resources/js/pages/MypageAdmin.vue"
 
 /***/ }),
 
+/***/ "./resources/js/pages/Top.vue":
+/*!************************************!*\
+  !*** ./resources/js/pages/Top.vue ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Top_vue_vue_type_template_id_6ae91248___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Top.vue?vue&type=template&id=6ae91248& */ "./resources/js/pages/Top.vue?vue&type=template&id=6ae91248&");
+/* harmony import */ var _Top_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Top.vue?vue&type=script&lang=js& */ "./resources/js/pages/Top.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Top_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Top_vue_vue_type_template_id_6ae91248___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Top_vue_vue_type_template_id_6ae91248___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/Top.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/pages/WordQuestionList.vue":
 /*!*************************************************!*\
   !*** ./resources/js/pages/WordQuestionList.vue ***!
@@ -6399,6 +6474,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/Top.vue?vue&type=script&lang=js&":
+/*!*************************************************************!*\
+  !*** ./resources/js/pages/Top.vue?vue&type=script&lang=js& ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Top_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Top.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Top.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Top_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/pages/WordQuestionList.vue?vue&type=script&lang=js&":
 /*!**************************************************************************!*\
   !*** ./resources/js/pages/WordQuestionList.vue?vue&type=script&lang=js& ***!
@@ -6585,6 +6676,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/Top.vue?vue&type=template&id=6ae91248&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/pages/Top.vue?vue&type=template&id=6ae91248& ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Top_vue_vue_type_template_id_6ae91248___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Top_vue_vue_type_template_id_6ae91248___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Top_vue_vue_type_template_id_6ae91248___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Top.vue?vue&type=template&id=6ae91248& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Top.vue?vue&type=template&id=6ae91248&");
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/WordQuestionList.vue?vue&type=template&id=d1e66752&":
 /*!********************************************************************************!*\
   !*** ./resources/js/pages/WordQuestionList.vue?vue&type=template&id=d1e66752& ***!
@@ -6705,31 +6813,31 @@ var render = function() {
     "v-app-bar",
     { attrs: { color: "cyan lighten-5", absolute: "" } },
     [
-      _c("RouterLink", { attrs: { to: "mypage" } }, [_vm._v(" 英語塾 ")]),
+      _c("RouterLink", { attrs: { to: "/" } }, [_vm._v(" 英語塾 ")]),
       _vm._v(" "),
-      _vm.isLogin
-        ? _c(
-            "div",
-            [
-              _c("span", [_vm._v(" " + _vm._s(_vm.username) + " ")]),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { color: "primary" }, on: { click: _vm.logout } },
-                [_vm._v("Logout")]
-              )
-            ],
-            1
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.isLogin,
+              expression: "isLogin"
+            }
+          ]
+        },
+        [
+          _c("span", [_vm._v(" " + _vm._s(_vm.username) + " さん")]),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { color: "primary" }, on: { click: _vm.logout } },
+            [_vm._v("ログアウト")]
           )
-        : _c(
-            "div",
-            [
-              _c("RouterLink", { attrs: { to: "/login" } }, [
-                _vm._v(" Login / Register ")
-              ])
-            ],
-            1
-          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -7803,7 +7911,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("ユーザー登録")]
+            [_vm._v("ユーザーとうろく")]
           )
         ],
         1
@@ -8292,6 +8400,55 @@ var render = function() {
       ],
       1
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Top.vue?vue&type=template&id=6ae91248&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Top.vue?vue&type=template&id=6ae91248& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", [_vm._v("英語塾（えいごじゅく）")]),
+    _vm._v(" "),
+    _c("p", [_vm._v("このアプリは、たのしくえいごをまなぶことができます。")]),
+    _vm._v(" "),
+    _vm.isLogin
+      ? _c(
+          "div",
+          [
+            _c("RouterLink", { attrs: { to: "/mypage" } }, [
+              _vm._v(" " + _vm._s(_vm.username) + "さんのマイページ ")
+            ])
+          ],
+          1
+        )
+      : _c(
+          "div",
+          [
+            _c("RouterLink", { attrs: { to: "/login" } }, [
+              _vm._v(" ログイン / ユーザーとうろく ")
+            ])
+          ],
+          1
+        )
   ])
 }
 var staticRenderFns = []

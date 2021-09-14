@@ -2,7 +2,7 @@
   <div>
     <v-tabs>
       <v-tab @click="selectTab1()">ログイン</v-tab>
-      <v-tab @click="selectTab2()">ユーザー登録</v-tab>
+      <v-tab @click="selectTab2()">ユーザーとうろく</v-tab>
     </v-tabs>
     <div v-show="tab === 1">
       <v-form @submit.prevent="login">
@@ -115,13 +115,13 @@ export default {
     async login() {
       await this.$store.dispatch('auth/login', this.loginForm)
       if (this.apiStatus) {
-        this.$router.push('/')
+        this.$router.push('/mypage')
       }
     },
     async register() {
       await this.$store.dispatch('auth/register', this.registerForm)
       if (this.apiStatus) {
-        this.$router.push('/')
+        this.$router.push('/mypage')
       }
     },
     clearError() {

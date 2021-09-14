@@ -80,7 +80,6 @@ export default {
         this.$store.commit('error/setCode', response.status)
         return false
       }
-      console.log('登録できました')
       this.fetch()
     },
     clearError() {
