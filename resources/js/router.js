@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Top from './pages/Top.vue'
 import Mypage from './pages/Mypage.vue'
 import MypageAdmin from './pages/MypageAdmin.vue'
 import Login from './pages/Login.vue'
@@ -18,6 +19,10 @@ Vue.use(VueRouter)
 
 // パスとコンポーネントのマッピング
 const routes = [
+  {
+    path: '/',
+    component: Top,
+  },
   {
     path: '/mypage',
     component: Mypage,

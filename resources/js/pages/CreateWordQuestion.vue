@@ -179,7 +179,7 @@ export default {
         this.$store.commit('error/setCode', response.status)
         return false
       }
-      this.$router.push('/')
+      this.$router.push('/admin')
     },
     clearError() {
       this.$store.commit('error/setCode', null)
