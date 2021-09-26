@@ -1,9 +1,17 @@
 <template>
-  <v-app-bar color="cyan lighten-5" absolute>
-    <RouterLink to="/"> 英語塾 </RouterLink>
+  <v-app-bar color="white" absolute class="v-navbar">
+    <div><v-icon class="v-navbar__icon"> mdi-cat </v-icon>えいごじゅく</div>
     <div v-show="isLogin">
-      <span> {{ username }} さん</span>
-      <v-btn color="primary" @click="logout">ログアウト</v-btn>
+      <v-menu offset-y :nudge-left="7">
+        <template v-slot:activator="{ on, attrs }">
+          <div v-bind="attrs" v-on="on">
+            <span> {{ username }} さん</span><v-icon>mdi-menu-down</v-icon>
+          </div>
+        </template>
+        <v-list class="v-navbar__list">
+          <v-list-item-title>ログアウト</v-list-item-title>
+        </v-list>
+      </v-menu>
     </div>
   </v-app-bar>
 </template>
@@ -30,3 +38,21 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.v-navbar {
+  &__icon {
+    margin-right: 4px;
+  }
+  &__list {
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    &:hover {
+      background-color: #f2efe8;
+    }
+  }
+  ::v-deep .v-toolbar__content {
+    justify-content: space-between;
+  }
+}
+</style>
