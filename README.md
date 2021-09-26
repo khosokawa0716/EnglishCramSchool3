@@ -40,7 +40,7 @@ https://www.hypertextcandy.com/vue-laravel-tutorial-introduction/
 `docker-compose up`
 #### Dockerを停止
 `docker-compose stop`
-#### コンテナ内にログイン（ログインしたら、通常`cd laravel/`）
+#### コンテナ内にログイン（ログインしたら、通常`cd web/laravel/`）
 `docker-compose exec english-cram-school_web bash`
 #### 開発用サーバーを立ち上げ
 `php artisan serve --host 0.0.0.0 --port 8081`
