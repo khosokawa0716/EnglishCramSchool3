@@ -1,17 +1,22 @@
 <template>
-  <v-app-bar color="white" absolute class="v-navbar">
-    <div><v-icon class="v-navbar__icon"> mdi-cat </v-icon>えいごじゅく</div>
-    <div v-show="isLogin">
-      <v-menu offset-y :nudge-left="7">
-        <template v-slot:activator="{ on, attrs }">
-          <div v-bind="attrs" v-on="on">
-            <span> {{ username }} さん</span><v-icon>mdi-menu-down</v-icon>
-          </div>
-        </template>
-        <v-list class="v-navbar__list">
-          <v-list-item-title>ログアウト</v-list-item-title>
-        </v-list>
-      </v-menu>
+  <v-app-bar color="white" class="v-navbar" absolute>
+    <div class="v-navbar__wrapper">
+      <div class="v-navbar__logo">
+        <v-icon class="v-navbar__logo-icon" large> mdi-cat </v-icon>
+        <span class="v-navbar__logo-title">えいごじゅく</span>
+      </div>
+      <div v-show="isLogin" class="v-navbar__username">
+        <v-menu offset-y :nudge-left="7">
+          <template v-slot:activator="{ on, attrs }">
+            <div v-bind="attrs" v-on="on">
+              <span> {{ username }} さん</span><v-icon>mdi-menu-down</v-icon>
+            </div>
+          </template>
+          <v-list class="v-navbar__list">
+            <v-list-item-title @click="logout()">ログアウト</v-list-item-title>
+          </v-list>
+        </v-menu>
+      </div>
     </div>
   </v-app-bar>
 </template>
@@ -40,8 +45,26 @@ export default {
 </script>
 <style lang="scss" scoped>
 .v-navbar {
-  &__icon {
-    margin-right: 4px;
+  &__wrapper {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    &-icon {
+      margin-right: 4px;
+    }
+    &-title {
+      font-size: 24px;
+    }
+  }
+  &__username {
+    display: flex;
+    align-items: center;
   }
   &__list {
     text-align: center;
