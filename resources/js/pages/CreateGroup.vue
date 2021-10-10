@@ -1,31 +1,44 @@
 <template>
-  <div>
-    <h1>グループ作成</h1>
-    <ul>
-      <li><router-link to="/admin">管理者のマイページ</router-link></li>
-    </ul>
-    <div v-if="registerErrors" class="errors">
-      <ul v-if="registerErrors.group">
-        <li v-for="msg in registerErrors.group" :key="msg">
-          {{ msg }}
-        </li>
-      </ul>
+  <div class="p-create-group">
+    <div class="p-create-group__header">
+      <h1 class="p-create-group__title">グループ作成</h1>
+      <router-link to="/admin" v-if="isAdmin" class="p-create-group__link"
+        >管理者のマイページ</router-link
+      >
     </div>
-    <v-form @submit.prevent="register">
-      <v-text-field
-        v-model="group"
-        :rules="groupRules"
-        :counter="20"
-        label="グループ"
-        required
-      ></v-text-field>
-    </v-form>
-    <v-btn type="submit" color="primary" @click="register">グループ登録</v-btn>
-    <div>
-      <span>登録されたグループ</span>
-      <ul v-for="group in groups" :key="group.index">
-        <li>{{ group }}</li>
-      </ul>
+    <div class="p-create-group__wrapper">
+      <div class="p-create-group__content">
+        <div v-if="registerErrors" class="errors">
+          <ul v-if="registerErrors.group">
+            <li v-for="msg in registerErrors.group" :key="msg">
+              {{ msg }}
+            </li>
+          </ul>
+        </div>
+        <v-form @submit.prevent="register">
+          <v-text-field
+            solo
+            dense
+            v-model="group"
+            :rules="groupRules"
+            :counter="20"
+            required
+          ></v-text-field>
+        </v-form>
+        <div class="p-create-group__btn">
+          <v-btn type="submit" color="primary" @click="register"
+            >グループ登録</v-btn
+          >
+        </div>
+      </div>
+    </div>
+    <div class="p-create-group__wrapper">
+      <div class="p-create-group__wrapper--registered">
+        <h3 class="p-create-group__sub-titile">登録されたグループ</h3>
+        <ul v-for="group in groups" :key="group.index">
+          <li>{{ group }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +57,11 @@ export default {
       ],
       registerErrors: null,
     }
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.getters['auth/username'] === 'admin'
+    },
   },
   methods: {
     async fetch() {
@@ -92,3 +110,46 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.p-create-group {
+  margin-top: 80px;
+  font-size: 16px;
+  width: 850px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__sub-title {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  &__wrapper {
+    background-color: #fff;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 18px 25px;
+    &--registered {
+      height: 250px;
+      overflow-y: scroll;
+    }
+  }
+  &__content {
+    background-color: #f2efe8;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 18px 25px;
+  }
+  &__btn {
+    text-align: right;
+    margin-top: 10px;
+  }
+}
+</style>

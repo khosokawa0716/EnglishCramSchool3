@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <h1>英語塾（えいごじゅく）</h1>
-    <p>このアプリは、たのしくえいごをまなぶことができます。</p>
-    <div v-if="isLogin">
-      <RouterLink to="/mypage"> {{ username }}さんのマイページ </RouterLink>
-    </div>
-    <div v-else>
-      <RouterLink to="/login"> ログイン / ユーザーとうろく </RouterLink>
-    </div>
+  <div class="p-top">
+    <p>えいごじゅくは、クイズでえいごをまなぶことができます。</p>
+    <p v-if="isLogin">
+      <RouterLink to="/mypage"> マイページ </RouterLink>
+    </p>
+    <p v-else>
+      はじめに<RouterLink to="/login"> ログイン / ユーザーとうろく </RouterLink
+      >してください。
+    </p>
   </div>
 </template>
 <script>
@@ -22,3 +22,10 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.p-top {
+  margin-top: 220px;
+  font-size: 18px;
+  text-align: center;
+}
+</style>

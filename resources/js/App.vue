@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="v-app">
     <Navbar />
     <main>
       <div class="container">
@@ -39,3 +39,17 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.v-app.v-application {
+  background-color: #f2efe8;
+}
+.container {
+  padding: 0;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+}
+main {
+  margin: 0;
+}
+</style>

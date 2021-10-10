@@ -1,13 +1,20 @@
 <template>
-  <div>
-    <h1>管理者用マイページ</h1>
-    <ul>
-      <li><router-link to="mypage">ユーザーのマイページ</router-link></li>
-      <li><router-link to="/create-group">グループ作成</router-link></li>
-      <li><router-link to="/create-word-question">問題作成</router-link></li>
-      <li><router-link to="/word-question-list">問題一覧</router-link></li>
-    </ul>
-    <div>
+  <div class="p-admin-mypage">
+    <div class="p-admin-mypage__header">
+      <h1 class="p-admin-mypage__title">管理者のマイページ</h1>
+      <router-link to="/mypage" v-if="isAdmin" class="p-admin-mypage__link"
+        >マイページ</router-link
+      >
+    </div>
+    <div class="p-admin-mypage__wrapper">
+      <ul>
+        <li><router-link to="/create-group">グループ作成</router-link></li>
+        <li><router-link to="/create-word-question">問題作成</router-link></li>
+        <li><router-link to="/word-question-list">問題一覧</router-link></li>
+      </ul>
+    </div>
+    <div class="p-admin-mypage__wrapper">
+      <h3 class="p-admin-mypage__sub-title">最近の利用状況</h3>
       <v-container>
         <v-simple-table>
           <thead>
@@ -60,6 +67,11 @@ export default {
       usersName: [],
     }
   },
+  computed: {
+    isAdmin() {
+      return this.$store.getters['auth/username'] === 'admin'
+    },
+  },
   methods: {
     async fetch(page) {
       const response = await axios.get(`/api/admin`, {
@@ -103,3 +115,32 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.p-admin-mypage {
+  margin-top: 80px;
+  font-size: 16px;
+  width: 850px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__sub-title {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  &__wrapper {
+    background-color: #fff;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 18px 25px;
+  }
+}
+</style>

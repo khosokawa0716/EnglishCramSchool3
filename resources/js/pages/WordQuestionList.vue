@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <h1>問題一覧</h1>
-    <ul>
-      <li><router-link to="/admin">管理者のマイページ</router-link></li>
-    </ul>
-    <div>
+  <div class="p-word-question-list">
+    <div class="p-word-question-list__header">
+      <h1 class="p-word-question-list__title">問題一覧</h1>
+      <router-link to="/admin" v-if="isAdmin" class="p-word-question-list__link"
+        >管理者のマイページ</router-link
+      >
+    </div>
+    <div class="p-word-question-list__wrapper">
       <v-container>
         <v-simple-table>
           <thead>
@@ -63,6 +65,11 @@ export default {
       groupsName: [],
     }
   },
+  computed: {
+    isAdmin() {
+      return this.$store.getters['auth/username'] === 'admin'
+    },
+  },
   methods: {
     // 問題をとってくる
     async fetch(page) {
@@ -98,3 +105,28 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.p-word-question-list {
+  margin-top: 80px;
+  font-size: 16px;
+  width: 850px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__wrapper {
+    background-color: #fff;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 18px 25px;
+  }
+}
+</style>

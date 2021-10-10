@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <span>{{ findGroupName(id) }}のもんだい</span>
-    <div>
-      <v-container v-if="end">
-        <h1>もんだいしゅうりょう</h1>
+  <div class="p-answer-question">
+    <h1 class="p-answer-question__title">もんだいをとく</h1>
+    <div class="p-answer-question__wrapper">
+      <v-container v-if="end" class="p-answer-question__content">
+        <h3 class="p-answer-question__sub-title">もんだいしゅうりょう</h3>
         <p>
           {{ questions.length }}もんのうち{{
             numberOfCorrectAnswers
@@ -12,14 +12,18 @@
         <p v-show="questions.length === numberOfCorrectAnswers">
           ぜんもんせいかい、すごいね！
         </p>
-        <RouterLink to="mypage">マイページもどる</RouterLink>
+        <router-link to="/mypage" class="p-answer-question__link"
+          >マイページ</router-link
+        >
       </v-container>
-      <v-container v-else>
-        <h1>にほんごに合うえいごをえらんで、「かいとう」ボタンをおしてね。</h1>
+      <v-container v-else class="p-answer-question__content">
+        <h3 class="p-answer-question__sub-title">{{ findGroupName(id) }}</h3>
         <ul v-for="(question, index) in questions" :key="question.id">
           <li v-show="index === current">
-            <p>{{ questions.length }}もんのうち{{ index + 1 }}もんめ</p>
-            {{ question.japanese }}
+            <p>{{ index + 1 }}/{{ questions.length }}</p>
+            <span class="p-answer-question__japanese">{{
+              question.japanese
+            }}</span>
             <v-radio-group v-model="selectedAnswers[index]">
               <v-radio :label="question.choice1" :value="1" />
               <v-radio :label="question.choice2" :value="2" />
@@ -44,7 +48,7 @@
               {{ judgement }}
             </v-card-title>
             <v-card-text>
-              <ul>
+              <ul class="p-answer-question__answer">
                 <li>あなたがえらんだかいとう： {{ selectedAnswer }}</li>
                 <li>せいかい： {{ answer }}</li>
               </ul>
@@ -167,7 +171,6 @@ export default {
         this.$store.commit('error/setCode', response.status)
         return false
       }
-      this.$router.push('/')
     },
   },
   created() {
@@ -175,3 +178,54 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.p-answer-question {
+  margin-top: 80px;
+  font-size: 16px;
+  width: 850px;
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__sub-title {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  &__japanese {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &__wrapper {
+    background-color: #fff;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 18px 25px;
+  }
+  &__content {
+    background-color: #f2efe8;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 18px 25px;
+    height: 60vh;
+    overflow-y: scroll;
+  }
+  &__form {
+    padding: 40px;
+    &-label {
+      margin-bottom: 2px;
+    }
+  }
+  &__btn {
+    text-align: right;
+    margin-top: 10px;
+  }
+  &__answer {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}
+</style>

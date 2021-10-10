@@ -1,49 +1,56 @@
 <template>
-  <div>
-    <h1>マイページ</h1>
-    <ul v-if="isAdmin">
-      <li><router-link to="/admin">管理者用のマイページ</router-link></li>
-    </ul>
-    <p>ようこそ {{ username }} さん</p>
-    <h3>もんだいをとく</h3>
-    <ul v-for="group in groups" :key="group.index">
-      <li>
-        <router-link :to="`/answer-word-question/${group.id}`">{{
-          group.name
-        }}</router-link>
-      </li>
-    </ul>
-    <div>
-      <h3>あしあと</h3>
-      <v-container>
-        <v-simple-table>
-          <thead>
-            <tr>
-              <th>グループ</th>
-              <th>正解した数</th>
-              <th>問題の数</th>
-              <th>問題を解いた日</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template v-for="history in histories">
-              <tr :key="history.id">
-                <td>{{ findGroupName(history.group_id) }}</td>
-                <td>{{ history.number_of_correct_answers }}</td>
-                <td>{{ history.number_answers }}</td>
-                <td>{{ history.created_at }}</td>
+  <div class="p-mypage">
+    <div class="p-mypage__header">
+      <h1 class="p-mypage__title">マイページ</h1>
+      <router-link to="/admin" v-if="isAdmin" class="p-mypage__link"
+        >管理者用のマイページ</router-link
+      >
+    </div>
+    <div class="p-mypage__wrapper">
+      <div class="p-mypage__wrapper--question">
+        <h3 class="p-mypage__sub-title">もんだいをとく</h3>
+        <ul v-for="group in groups" :key="group.index">
+          <li>
+            <router-link :to="`/answer-word-question/${group.id}`">{{
+              group.name
+            }}</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="p-mypage__wrapper">
+      <div class="p-mypage__wrapper--history">
+        <h3 class="p-mypage__sub-title">あしあと</h3>
+        <v-container>
+          <v-simple-table>
+            <thead>
+              <tr>
+                <th>グループ</th>
+                <th>正解した数</th>
+                <th>問題の数</th>
+                <th>問題を解いた日</th>
               </tr>
-            </template>
-          </tbody>
-        </v-simple-table>
-        <div class="text-center">
-          <v-pagination
-            v-model="page"
-            :length="last_page"
-            @input="fetch"
-          ></v-pagination>
-        </div>
-      </v-container>
+            </thead>
+            <tbody>
+              <template v-for="history in histories">
+                <tr :key="history.id">
+                  <td>{{ findGroupName(history.group_id) }}</td>
+                  <td>{{ history.number_of_correct_answers }}</td>
+                  <td>{{ history.number_answers }}</td>
+                  <td>{{ history.created_at }}</td>
+                </tr>
+              </template>
+            </tbody>
+          </v-simple-table>
+          <div class="text-center">
+            <v-pagination
+              v-model="page"
+              :length="last_page"
+              @input="fetch"
+            ></v-pagination>
+          </div>
+        </v-container>
+      </div>
     </div>
   </div>
 </template>
@@ -115,3 +122,40 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.p-mypage {
+  margin-top: 80px;
+  font-size: 16px;
+  width: 850px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__sub-title {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  &__wrapper {
+    background-color: #fff;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 18px 25px;
+    &--question {
+      height: 150px;
+      overflow-y: scroll;
+    }
+    &--history {
+      height: 300px;
+      overflow-y: scroll;
+    }
+  }
+}
+</style>
