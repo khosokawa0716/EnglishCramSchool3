@@ -23,7 +23,7 @@
               dense
               v-model="createWordQuestionForm.japanese"
               :rules="japaneseRules"
-              :counter="20"
+              :counter="50"
               required
             ></v-text-field>
             <p class="p-create-question__form-label">選択肢1</p>
@@ -157,7 +157,7 @@ export default {
       },
       japaneseRules: [
         (v) => !!v || '日本語は必ず入れてください',
-        (v) => v.length <= 20 || '日本語は２０もじ以下で入れてください',
+        (v) => v.length <= 50 || '日本語は５０もじ以下で入れてください',
       ],
       choicesRules: [
         (v) => !!v || '選択肢３つは必ず入れてください',
