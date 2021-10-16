@@ -18,7 +18,7 @@ class WordQuestionController extends Controller
         // Log::info($request);
         $request->validate([
             'group_id' => 'required',
-            'japanese' => 'required|string|min:1|max:20',
+            'japanese' => 'required|string|min:1|max:50',
             'choice1' => 'required|string|min:1|max:30',
             'choice2' => 'required|string|min:1|max:30',
             'choice3' => 'required|string|min:1|max:30',
@@ -101,7 +101,7 @@ class WordQuestionController extends Controller
         // 1.バリデーションチェック
         $request->validate([
             'selected_group_id' => 'required',
-            'japanese' => 'required|string|min:1|max:20',
+            'japanese' => 'required|string|min:1|max:50',
             'choice1' => 'required|string|min:1|max:30',
             'choice2' => 'required|string|min:1|max:30',
             'choice3' => 'required|string|min:1|max:30',
